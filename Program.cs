@@ -17,7 +17,14 @@ class Program
         var bigO = new BigOLessons.BigO();
 
         //bigO.FindWord_Linear("fernando", args);
-        bigO.GetFirstItem_Constant(args);
+        //bigO.GetFirstItem_Constant(args);
+        
+        var rndNumbers = new byte[1000];
+
+        var random = new Random();
+        random.NextBytes(rndNumbers);
+
+        bigO.LogAllPairsOfNumbers_PowerOfTwo(rndNumbers);
 
         Console.WriteLine($"Program executed");
     }

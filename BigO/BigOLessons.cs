@@ -50,5 +50,22 @@ public class BigO
         Console.WriteLine($"Execution time: {timer.Elapsed}");
     }
 
-    
+    /// <summary>
+    /// Power of Two BigO complexity. O(n^2)
+    /// </summary>
+    public void LogAllPairsOfNumbers_PowerOfTwo(byte[] items)
+    {
+        var timer = Stopwatch.StartNew();
+
+        int pairCount = 1;
+        for(int i = 0; i < items.Length - 1; i++)
+        {
+            for (int j = i + 1; j < items.Length; j++)
+            {
+                Console.WriteLine($"> Pair({pairCount++}): [{items[i]} {items[j]}]");
+            }
+        }
+
+        Console.WriteLine($"> Execution time: {timer.Elapsed}");
+    }
 }
