@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using FirstRepo.InterviewLessons;
 
 namespace FirstRepo;
 
@@ -24,7 +25,17 @@ class Program
         var random = new Random();
         random.NextBytes(rndNumbers);
 
-        bigO.LogAllPairsOfNumbers_PowerOfTwo(rndNumbers);
+        //bigO.LogAllPairsOfNumbers_PowerOfTwo(rndNumbers);
+
+        #region Interview
+        string[] array1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"];
+        string[] array2 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "r"];
+
+        var interview = new Interview();
+
+        interview.GoogleInterviewTwoArraysProblem(array1, array2);
+        interview.GoogleInterviewTwoArraysProblem_BestSolution(array1, array2);
+        #endregion
 
         Console.WriteLine($"Program executed");
     }
