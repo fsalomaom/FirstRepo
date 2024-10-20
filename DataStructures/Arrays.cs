@@ -111,6 +111,7 @@ namespace FirstRepo.DataStructures.Arrays
 
                 return resultIndex.ToArray();
             }
+            
             //Dois loops = O(n²)
             for (int i = 0; i < nums.Length; i++)
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using FirstRepo.DataStructures.Arrays;
+using FirstRepo.DataStructures.LinkedLists;
 using FirstRepo.InterviewLessons;
 
 namespace FirstRepo;
@@ -38,6 +39,9 @@ class Program
 
         //interview.GoogleInterviewTwoArraysProblem(array1, array2);
         //interview.GoogleInterviewTwoArraysProblem_BestSolution(array1, array2);
+        //int? firstRepeatedNumber = interview.ReturnFirstRecurringNumber2([2,1,1,2,3,5,1,2,4]);
+        //int? firstRepeatedNumber = interview.ReturnFirstRecurringNumber2([2,3,1,2,3,5,6,7,8]);
+        //Console.WriteLine($"First Repeated Number: {firstRepeatedNumber}");
         #endregion
 
         #region Array
@@ -81,7 +85,7 @@ class Program
         #endregion
 
         #region Hash Tables
-
+        /*
         var myHashTable = new DataStructures.HashTables.HashTable(2);
 
         myHashTable.Set("grapes", 10000);
@@ -97,8 +101,21 @@ class Program
         Console.WriteLine($"Blueberries: {myHashTable.Get("blueberries")}");
 
         Console.WriteLine($"Keys: {string.Join(", ", myHashTable.GetKeys())}");
-        #endregion
 
         Console.WriteLine(myHashTable);
+        */
+        #endregion
+
+        #region LinkedLists
+        var myLinkedList = new LinkedListCustom(10);
+
+        myLinkedList.Append(20);
+        myLinkedList.Append(30);
+        myLinkedList.Prepend(1);
+        myLinkedList.Append(40);
+
+        Console.WriteLine($"LinkedList values: {myLinkedList}\r\n");
+
+        #endregion
     }
 }

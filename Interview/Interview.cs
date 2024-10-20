@@ -1,6 +1,9 @@
 using System;
+using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+
 
 namespace FirstRepo.InterviewLessons
 {
@@ -23,7 +26,7 @@ namespace FirstRepo.InterviewLessons
             {
                 for (int j = 0; j < array2.Length; j++)
                 {
-                    Console.WriteLine($"> {array1[i]} = {array2[j]} ?"); 
+                    Console.WriteLine($"> {array1[i]} = {array2[j]} ?");
                     if (array2[j] == array1[i])
                     {
                         Console.WriteLine($"> Common item found in {timer.Elapsed}");
@@ -51,8 +54,69 @@ namespace FirstRepo.InterviewLessons
             }
 
             timer.Stop();
-            Console.WriteLine($"> Arrays have nothing in common. Time: {timer.Elapsed}"); 
+            Console.WriteLine($"> Arrays have nothing in common. Time: {timer.Elapsed}");
             return false;
+        }
+
+        public int? ReturnFirstRecurringNumber(int[] numbers)
+        {
+            if (numbers.Length < 2)
+                return null;
+
+            var linkedList = new LinkedList<KeyValuePair<int, int>>();
+
+            //Varre a sequencia procurando pelo próximo repetido de acordo com o nextIndex
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                int iteratorCount = 0;
+
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    Console.WriteLine($"{++iteratorCount}) Comparing[{i},{j}] => {numbers[i]} == {numbers[j]}");
+
+                    if (numbers[i] == numbers[j])
+                    {
+                        if (linkedList.Count == 0)
+                            linkedList.AddFirst(new KeyValuePair<int, int>(i, iteratorCount));
+                        else
+                        {
+                            if (iteratorCount < linkedList.Cast<KeyValuePair<int, int>>().First().Value)
+                                linkedList.AddFirst(new KeyValuePair<int, int>(i, iteratorCount));
+                        }
+
+                        break;
+                    }
+                }
+            }
+
+            if (linkedList.Count == 0)
+                return null;
+
+            return numbers[linkedList.Cast<KeyValuePair<int, int>>().First().Key];
+        }
+
+        public int? ReturnFirstRecurringNumber2(int[] numbers)
+        {
+            if (numbers.Length < 2)
+                return null;
+
+            var hashMap = new Hashtable();
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine($"hashMap: [{string.Join(" ", hashMap.Keys.Cast<int>())}]");
+
+                if (hashMap.ContainsKey(numbers[i]) == true)
+                {
+                    return numbers[i];
+                }
+                else
+                {
+                    hashMap.Add(numbers[i], i);
+                }
+            }
+
+            return null;
         }
     }
 }
