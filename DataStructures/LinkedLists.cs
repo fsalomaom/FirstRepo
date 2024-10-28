@@ -38,8 +38,10 @@ namespace FirstRepo.DataStructures.LinkedLists
 
             _tail._next = newNode;
             _tail = newNode;
-            
+
             Length++;
+
+            Console.WriteLine($"Appended value: {value}");
         }
 
         public void Prepend(object value)
@@ -50,6 +52,8 @@ namespace FirstRepo.DataStructures.LinkedLists
             _head = newNode;
 
             Length++;
+
+            Console.WriteLine($"Prepended value: {value}");
         }
 
         public void Insert(int index, object value)
@@ -60,11 +64,30 @@ namespace FirstRepo.DataStructures.LinkedLists
                 return;
             }
 
-            //TODO
+            //Pre node
+            var preNode = _head;
+
+            //Loop to find the pre node
             for (int i = 0; i < index - 1; i++)
             {
-                
+                preNode = preNode._next;
             }
+
+            //Next node will be the after node of the inserted one
+            var afterNode = preNode._next;
+
+            //Create new node
+            var newNode = new Node(value);
+
+            //Set the preNode's next node to be the new one
+            preNode._next = newNode;
+
+            //New node's next receive the after node
+            newNode._next = afterNode;
+
+            Length++;
+
+            Console.WriteLine($"Inserted value: {value}");
         }
 
         public override string ToString()

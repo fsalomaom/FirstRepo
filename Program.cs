@@ -111,8 +111,9 @@ class Program
 
         myLinkedList.Append(20);
         myLinkedList.Append(30);
-        myLinkedList.Prepend(1);
+        myLinkedList.Prepend(5);
         myLinkedList.Append(40);
+        myLinkedList.Insert(2, 25);
 
         Console.WriteLine($"LinkedList values: {myLinkedList}\r\n");
 
