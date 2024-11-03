@@ -11,18 +11,18 @@ class Program
     static void Main(string[] args)
     {
         int arraySize = 10000000;
-        
+
         //Create a very big array
         args = new string[arraySize];
 
         args[arraySize - 1] = "fernando";
-        
+
         #region BigO
         var bigO = new BigOLessons.BigO();
 
         //bigO.FindWord_Linear("fernando", args);
         //bigO.GetFirstItem_Constant(args);
-        
+
         var rndNumbers = new byte[1000];
 
         var random = new Random();
@@ -53,7 +53,7 @@ class Program
         arrayObj.Push("d");
         arrayObj.Push("e");
         arrayObj.Push("f");
-        arrayObj.Pop(); 
+        arrayObj.Pop();
         arrayObj.Delete(1);
 
         /*
@@ -115,9 +115,26 @@ class Program
         myLinkedList.Append(40);
         myLinkedList.Insert(2, 15);
         myLinkedList.Insert(80, 50);
-        myLinkedList.Remove(0);
 
-        Console.WriteLine($"LinkedList values: {myLinkedList}\r\n");
+        Console.WriteLine($"Singly LinkedList values: {myLinkedList}\r\n");
+
+        myLinkedList.ReverseEnhanced();
+        Console.WriteLine($"Singly LinkedList reversed: {myLinkedList}\r\n");
+
+        //DoublyLinkedList
+        var doublyLinkedList = new DoublyLinkedList(100);
+
+        doublyLinkedList.Append(200);
+        doublyLinkedList.Append(300);
+        doublyLinkedList.Prepend(50);
+        doublyLinkedList.Append(350);
+        doublyLinkedList.Insert(2, 150);
+
+        Console.WriteLine($"Doubly LinkedList: {doublyLinkedList}");
+
+        doublyLinkedList.Remove(3); //V: 200
+
+        Console.WriteLine($"Doubly LinkedList: {doublyLinkedList}");
 
         #endregion
     }
