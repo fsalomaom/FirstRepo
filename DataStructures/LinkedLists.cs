@@ -21,8 +21,8 @@ namespace FirstRepo.DataStructures.LinkedLists
             }
         }
 
-        private Node _head;
-        private Node _tail;
+        private Node? _head;
+        private Node? _tail;
         public int Length { get; set; }
 
         public LinkedListCustom(object value)
@@ -64,23 +64,23 @@ namespace FirstRepo.DataStructures.LinkedLists
                 return;
             }
 
-            //Pre node
-            var preNode = _head;
-
-            //Loop to find the pre node
-            for (int i = 0; i < index - 1; i++)
+            if (index >= Length - 1)
             {
-                preNode = preNode._next;
+                Append(value);
+                return;
             }
 
+            //Traverse through nodes to find the leader node
+            var leaderNode = TraverseToIndex(index - 1);
+
             //Next node will be the after node of the inserted one
-            var afterNode = preNode._next;
+            var afterNode = leaderNode._next;
 
             //Create new node
             var newNode = new Node(value);
 
-            //Set the preNode's next node to be the new one
-            preNode._next = newNode;
+            //Set the leader's node next node to be the new one
+            leaderNode._next = newNode;
 
             //New node's next receive the after node
             newNode._next = afterNode;
@@ -90,9 +90,68 @@ namespace FirstRepo.DataStructures.LinkedLists
             Console.WriteLine($"Inserted value: {value}");
         }
 
+        public void Remove(int index)
+        {
+            if (Length <= 1)
+            {
+                _head = null;
+                _tail = null;
+                Length--;
+                return;
+            }
+
+            //If index equals zero
+            if (index == 0)
+            {
+                _head = _head._next;
+                _tail = Length == 2 ? null : _tail;
+                Length--;
+                return;
+            }
+
+            //Gets the node before the one to be removed
+            var nodeBefore = TraverseToIndex(index - 1);
+
+            //Gets the node to remove
+            var nodeToRemove = nodeBefore._next;
+
+            //Save the node after
+            var nextNode = nodeToRemove?._next;
+
+            //Sets the nodeBefore's next node to the next node from nodeToRemove
+            nodeBefore._next = nextNode;
+
+            if (nodeBefore._next == null)
+                _tail = nodeBefore;
+
+            Length--;
+
+            Console.WriteLine($"Removed value: {nodeToRemove}");
+        }
+
+        private Node? TraverseToIndex(int index)
+        {
+            if (index > Length - 1)
+                return _tail;
+
+            Node? result = _head;
+
+            for (int i = 0; i < index; i++)
+            {
+                result = result._next;
+            }
+
+            return result;
+        }
+
         public override string ToString()
         {
             return $"Nodes: {Length} -> {_head}";
         }
+    }
+
+    public class DoublyLinkedList
+    {
+        
     }
 }
