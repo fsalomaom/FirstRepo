@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using FirstRepo.DataStructures.Arrays;
 using FirstRepo.DataStructures.LinkedLists;
 using FirstRepo.InterviewLessons;
