@@ -134,7 +134,6 @@ class Program
         doublyLinkedList.Remove(3); //V: 200
 
         Console.WriteLine($"Doubly LinkedList: {doublyLinkedList}");
-
         #endregion
     }
 }
