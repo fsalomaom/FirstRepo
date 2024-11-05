@@ -223,7 +223,7 @@ namespace FirstRepo.DataStructures.LinkedLists
 
             Length++;
 
-            Console.WriteLine($"DLL created. Value: {value}");
+            Console.WriteLine($"DoublyLinkedList created. Value: {value}");
         }
 
         public void Append(object value)
