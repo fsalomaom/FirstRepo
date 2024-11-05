@@ -378,6 +378,10 @@ namespace FirstRepo.DataStructures.LinkedLists
             return result;
         }
 
+        /// <summary>
+        /// Retuns the string representation of the object
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string nodes = "[ ";
