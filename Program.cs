@@ -139,6 +139,7 @@ class Program
         #endregion
 
         #region Stack Linked List
+        /*
         var myStackLL = new DataStructures.StackLL();
 
         myStackLL.Push(10);
@@ -163,9 +164,11 @@ class Program
         Console.WriteLine($"Pop: {lastItem}");
 
         Console.WriteLine($"MyStack: {myStackLL} -> Is Empty? {myStackLL.IsEmpty()}\r\n");
+        */
         #endregion
 
         #region Stack Array
+        /*
         var myStackArray = new DataStructures.StackArray();
 
         myStackArray.Push(100);
@@ -191,8 +194,52 @@ class Program
         Console.WriteLine($"Pop: {lastItem2}");
 
         Console.WriteLine($"MyStack: Array {myStackArray} -> Is Empty? {myStackArray.IsEmpty()}\r\n");
+        */
+        #endregion
+
+        #region Queue Linked List
+        /*
+        var myQueueArr = new DataStructures.QueueLL();
+
+        myQueueArr.Enqueue(50);
+        myQueueArr.Enqueue(70);
+        myQueueArr.Enqueue(90);
+
+        Console.WriteLine($"MyQueue LL: {myQueueArr}");
+
+        myQueueArr.Peek();
+        myQueueArr.Dequeue();
+        Console.WriteLine($"MyQueue LL: {myQueueArr}");
+
+        myQueueArr.Peek();
+        myQueueArr.Dequeue();
+        Console.WriteLine($"MyQueue LL: {myQueueArr}");
+
+        myQueueArr.Dequeue();
+        Console.WriteLine($"MyQueue LL: {myQueueArr} -> Is Empty? {myQueueArr.IsEmpty()}");
+        */
+        #endregion
+
+        #region Queue Stack
+        var myQueueStack = new DataStructures.QueueStack();
+
+        myQueueStack.Push(10);
+        myQueueStack.Push(20);
+        myQueueStack.Push(30);
+
+        Console.WriteLine($"QueueStack peek: {myQueueStack.Peek()}");
+        
+        Console.WriteLine($"QueueStack pop: {myQueueStack.Pop()}");
+        
+        Console.WriteLine($"QueueStack peek: {myQueueStack.Peek()}");
+        Console.WriteLine($"QueueStack pop: {myQueueStack.Pop()}");
+
+        Console.WriteLine($"QueueStack Empty: {myQueueStack.Empty()}");
+
+        Console.WriteLine($"QueueStack pop: {myQueueStack.Pop()}");
+        Console.WriteLine($"QueueStack Empty: {myQueueStack.Empty()}");
 
         #endregion
-        
+
     }
 }
