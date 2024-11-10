@@ -106,6 +106,7 @@ class Program
         #endregion
 
         #region LinkedLists
+        /*
         var myLinkedList = new LinkedListCustom(10);
 
         myLinkedList.Append(20);
@@ -134,6 +135,64 @@ class Program
         doublyLinkedList.Remove(3); //V: 200
 
         Console.WriteLine($"Doubly LinkedList: {doublyLinkedList}");
+        */
         #endregion
+
+        #region Stack Linked List
+        var myStackLL = new DataStructures.StackLL();
+
+        myStackLL.Push(10);
+        myStackLL.Push(20);
+        myStackLL.Push(30);
+
+        myStackLL.Peek();
+
+        Console.WriteLine($"MyStack: {myStackLL}");
+
+        var lastItem = myStackLL.Pop();
+        Console.WriteLine($"Pop: {lastItem}");
+
+        Console.WriteLine($"MyStack: {myStackLL}");
+
+        lastItem = myStackLL.Pop();
+        Console.WriteLine($"Pop: {lastItem}");
+
+        Console.WriteLine($"MyStack: {myStackLL}");
+
+        lastItem = myStackLL.Pop();
+        Console.WriteLine($"Pop: {lastItem}");
+
+        Console.WriteLine($"MyStack: {myStackLL} -> Is Empty? {myStackLL.IsEmpty()}\r\n");
+        #endregion
+
+        #region Stack Array
+        var myStackArray = new DataStructures.StackArray();
+
+        myStackArray.Push(100);
+        myStackArray.Push(200);
+        myStackArray.Push(300);
+        myStackArray.Push(400);
+
+        myStackArray.Peek();
+
+        Console.WriteLine($"MyStack: {myStackArray}");
+
+        var lastItem2 = myStackArray.Pop();
+        Console.WriteLine($"Pop: {lastItem2}");
+
+        Console.WriteLine($"MyStack: {myStackArray}");
+
+        lastItem2 = myStackArray.Pop();
+        Console.WriteLine($"Pop: {lastItem2}");
+
+        Console.WriteLine($"MyStack: {myStackArray}");
+
+        lastItem2 = myStackArray.Pop();
+        Console.WriteLine($"Pop: {lastItem2}");
+
+        Console.WriteLine($"MyStack: {myStackArray} -> Is Empty? {myStackArray.IsEmpty()}\r\n");
+
+        #endregion
+        
     }
 }
