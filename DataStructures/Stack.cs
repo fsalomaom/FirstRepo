@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 namespace FirstRepo.DataStructures;
 
@@ -76,49 +77,6 @@ public class StackLL
         return topObj.Value;
     }
 
-    public object? Pop2()
-    {
-        if (Top == null)
-            throw new ArgumentNullException("Top", "Stack is empty");
-
-        var topValue = Top.Value;
-
-        if (Bottom == Top)
-        {
-            Bottom = null;
-            Top = null;
-            Length--;
-
-            return topValue;
-        }
-
-        if (Bottom.Next == Top)
-        {
-            Top = Bottom;
-            Bottom.Next = null;
-            Length--;
-
-            return topValue;
-        }
-
-        var nextNode = Bottom.Next;
-
-        while (nextNode != null && nextNode.Next != Top)
-        {
-            nextNode = nextNode.Next;
-        }
-
-        //Deletes the top item
-        nextNode.Next = null;
-
-        //Sets the node before last to top
-        Top = nextNode;
-
-        Length--;
-
-        return topValue;
-    }
-
     public object? Peek()
     {
         if (Top == null)
@@ -174,9 +132,10 @@ public class StackArray
         if (StackList.Count == 0)
             throw new ArgumentOutOfRangeException("Items", "Stack empty");
 
+        //Gets the last item 
         var lastItem = StackList.Last();
 
-        StackList.RemoveAt(StackList.Count - 1);
+        StackList.Remove(lastItem);
 
         Console.WriteLine($"Poped value: {lastItem}");
 

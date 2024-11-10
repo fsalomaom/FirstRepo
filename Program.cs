@@ -175,22 +175,22 @@ class Program
 
         myStackArray.Peek();
 
-        Console.WriteLine($"MyStack: {myStackArray}");
+        Console.WriteLine($"MyStack Array: {myStackArray}");
 
         var lastItem2 = myStackArray.Pop();
         Console.WriteLine($"Pop: {lastItem2}");
 
-        Console.WriteLine($"MyStack: {myStackArray}");
+        Console.WriteLine($"MyStack Array: {myStackArray}");
 
         lastItem2 = myStackArray.Pop();
         Console.WriteLine($"Pop: {lastItem2}");
 
-        Console.WriteLine($"MyStack: {myStackArray}");
+        Console.WriteLine($"MyStack Array: {myStackArray}");
 
         lastItem2 = myStackArray.Pop();
         Console.WriteLine($"Pop: {lastItem2}");
 
-        Console.WriteLine($"MyStack: {myStackArray} -> Is Empty? {myStackArray.IsEmpty()}\r\n");
+        Console.WriteLine($"MyStack: Array {myStackArray} -> Is Empty? {myStackArray.IsEmpty()}\r\n");
 
         #endregion
         
