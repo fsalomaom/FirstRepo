@@ -118,7 +118,7 @@ class Program
 
         Console.WriteLine($"Singly LinkedList values: {myLinkedList}\r\n");
 
-        myLinkedList.ReverseEnhanced();
+        myLinkedList.Reverse();
         Console.WriteLine($"Singly LinkedList reversed: {myLinkedList}\r\n");
 
         //DoublyLinkedList

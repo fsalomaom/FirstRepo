@@ -2,16 +2,17 @@ using System;
 
 namespace FirstRepo.DataStructures.LinkedLists
 {
-    public class LinkedListCustom
+    public class SinglyLinkedList
     {
         internal class Node
         {
-            internal object? _value;
+            internal object _value;
             internal Node? _next;
 
             public Node(object value)
             {
                 _value = value;
+                _next = null;
             }
         }
 
@@ -19,7 +20,7 @@ namespace FirstRepo.DataStructures.LinkedLists
         private Node? _tail;
         public int Length { get; set; }
 
-        public LinkedListCustom(object value)
+        public SinglyLinkedList(object value)
         {
             _head = new Node(value);
             _tail = _head;
@@ -128,29 +129,13 @@ namespace FirstRepo.DataStructures.LinkedLists
 
         public void Reverse()
         {
-            var newReversedList = new LinkedListCustom(_tail._value);
+            if (Length <= 1)
+                return;
 
-            int count = Length - 2;
-
-            while (count >= 0)
-            {
-                var newNode = TraverseToIndex(count);
-
-                newReversedList.Append(newNode._value);
-
-                count--;
-            }
-
-            _head = newReversedList._head;
-            _tail = newReversedList._tail;
-        }
-
-        public void ReverseEnhanced()
-        {
             _tail = _head;
             
-            Node second = _head._next;
-            Node first = _head;
+            Node? second = _head._next;
+            Node? first = _head;
 
             for (int i = 0; i < Length - 1; i++)
             {
@@ -164,7 +149,7 @@ namespace FirstRepo.DataStructures.LinkedLists
             _head = first;
         }
 
-        private Node? TraverseToIndex(int index)
+        private Node TraverseToIndex(int index)
         {
             if (index > Length - 1)
                 return _tail;
@@ -181,7 +166,6 @@ namespace FirstRepo.DataStructures.LinkedLists
 
         public override string ToString()
         {
-            //return $"Nodes: {Length} -> {_head}";
             string nodes = "[ ";
             var nodeToTraverse = _head;
 
