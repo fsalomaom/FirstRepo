@@ -221,6 +221,7 @@ class Program
         #endregion
 
         #region Queue Stack
+        /*
         var myQueueStack = new DataStructures.QueueStack();
 
         myQueueStack.Push(10);
@@ -238,6 +239,23 @@ class Program
 
         Console.WriteLine($"QueueStack pop: {myQueueStack.Pop()}");
         Console.WriteLine($"QueueStack Empty: {myQueueStack.Empty()}");
+        */
+        #endregion
+
+        #region Binary Search Tree
+        var myBst = new DataStructures.BinarySearchTree();
+
+        myBst.Insert(9);
+        myBst.Insert(4);
+        myBst.Insert(6);
+        myBst.Insert(20);
+        myBst.Insert(170);
+        myBst.Insert(15);
+        myBst.Insert(1);
+
+        myBst.LookUp(15);
+        myBst.LookUp(20);
+        myBst.LookUp(9);
 
         #endregion
 
