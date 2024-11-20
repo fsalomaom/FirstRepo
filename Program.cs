@@ -252,10 +252,18 @@ class Program
         myBst.Insert(170);
         myBst.Insert(15);
         myBst.Insert(1);
+        myBst.Insert(17);
+        myBst.PrintTree();
 
         myBst.LookUp(15);
         myBst.LookUp(20);
-        myBst.LookUp(9);
+        myBst.LookUp(90);
+
+        myBst.Remove(20);
+        myBst.PrintTree();
+
+        myBst.Remove(9);
+        myBst.PrintTree();
 
         #endregion
 
