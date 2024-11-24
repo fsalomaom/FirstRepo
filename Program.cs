@@ -44,6 +44,7 @@ class Program
         #endregion
 
         #region Array
+        /*
         var arrayObj = new SalomaoArray();
 
         arrayObj.Push("a");
@@ -55,7 +56,6 @@ class Program
         arrayObj.Pop();
         arrayObj.Delete(1);
 
-        /*
         //Reverse array
         var reversed = SalomaoArray.ReverseText_V2("Fernando");
         Console.WriteLine($"Reverse String: {reversed}");
@@ -243,6 +243,7 @@ class Program
         #endregion
 
         #region Binary Search Tree
+        /*
         var myBst = new DataStructures.BinarySearchTree();
 
         myBst.Insert(9);
@@ -264,6 +265,32 @@ class Program
 
         myBst.Remove(9);
         myBst.PrintTree();
+        */
+        #endregion
+
+        #region Graphs
+        var myGraph = new DataStructures.Graphs.Graph();
+
+        myGraph.AddVertex(0);
+        myGraph.AddVertex(1);
+        myGraph.AddVertex(2);
+        myGraph.AddVertex(3);
+        myGraph.AddVertex(4);
+        myGraph.AddVertex(5);
+        myGraph.AddVertex(6);
+
+        myGraph.ShowConnections();
+
+        myGraph.AddEdge(0, 1);
+        myGraph.AddEdge(0, 2);
+        myGraph.AddEdge(2, 1);
+        myGraph.AddEdge(2, 4);
+        myGraph.AddEdge(3, 1);
+        myGraph.AddEdge(3, 4);
+        myGraph.AddEdge(4, 5);
+        myGraph.AddEdge(5, 6);
+
+        myGraph.ShowConnections();
 
         #endregion
 
