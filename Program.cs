@@ -269,6 +269,7 @@ class Program
         #endregion
 
         #region Graphs
+        /*
         var myGraph = new DataStructures.Graphs.Graph();
 
         myGraph.AddVertex(0);
@@ -291,8 +292,43 @@ class Program
         myGraph.AddEdge(5, 6);
 
         myGraph.ShowConnections();
-
+        */
         #endregion
 
+        #region Factorial
+        /*
+        var myFactorial = new Algorithms.Factorial();
+
+        int factorialNumber = 6;
+        Console.WriteLine($"The FindFatorialRecursive() of {factorialNumber} is: {myFactorial.FindFatorialRecursively(factorialNumber)}"); 
+
+        Console.WriteLine($"The FindFactorialInterative() of {factorialNumber} is: {myFactorial.FindFactorialIteratively(factorialNumber)}\n");
+        */
+        #endregion
+
+        #region Fibonacci
+        /*
+        var myFibo = new Algorithms.Fibonacci();
+
+        int fiboNumber = 13;
+
+        Console.WriteLine($"FibonacciInteractive({fiboNumber}) = {myFibo.FibonacciIteratively(fiboNumber)}");
+        Console.WriteLine($"FibonacciRecursive({fiboNumber}) = {myFibo.FibonacciRecursively(fiboNumber)}");
+        */
+        #endregion
+
+        #region Reverse String
+        /*
+        var myReverse = new Algorithms.ReverString();
+
+        string text = "abcdefg_ABCDEFG";
+
+        Console.WriteLine($"Text: {text} | Reverse: {myReverse.ReverseTextIteratively(text)}");
+        Console.WriteLine($"Text: {text} | Reverse Recursive: {myReverse.ReverseTextRecursively(text)}");
+        */
+        #endregion
+
+
+        
     }
 }
