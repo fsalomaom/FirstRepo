@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FirstRepo.DataStructures.Arrays;
 using FirstRepo.DataStructures.LinkedLists;
 using FirstRepo.InterviewLessons;
@@ -328,7 +329,21 @@ class Program
         */
         #endregion
 
+        #region Bubble Sort
+        var myBubble = new Sorting.Bubble();
 
-        
+        List<int> unsortedNumbers = [44, 7, 23, 55, 9, 5, 10, 33, 2];
+
+        myBubble.Sort(unsortedNumbers);
+        #endregion
+
+        #region Selection Sort
+        var mySelection = new Sorting.Selection();
+
+        List<int> unsortedNumbers2 = [1, 44, 7, 23, 55, 9, 5, 10, 33, 77];
+
+        mySelection.Sort(unsortedNumbers2);
+
+        #endregion
     }
 }
