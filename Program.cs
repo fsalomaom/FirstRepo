@@ -330,19 +330,31 @@ class Program
         #endregion
 
         #region Bubble Sort
+        /*
         var myBubble = new Sorting.Bubble();
 
         List<int> unsortedNumbers = [44, 7, 23, 55, 9, 5, 10, 33, 2];
 
         myBubble.Sort(unsortedNumbers);
+        */
         #endregion
 
         #region Selection Sort
+        /*
         var mySelection = new Sorting.Selection();
 
         List<int> unsortedNumbers2 = [1, 44, 7, 23, 55, 9, 5, 10, 33, 77];
 
         mySelection.Sort(unsortedNumbers2);
+        */
+        #endregion
+
+        #region Insertion Sort
+        var myInsertion = new Sorting.Insertion();
+
+        List<int> unsortedNumbers3 = [1, 44, 33, 7, 23, 55, 9, 5, -2, 10, 33, 77];
+
+        myInsertion.Sort(unsortedNumbers3);
 
         #endregion
     }
