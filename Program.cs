@@ -352,7 +352,7 @@ class Program
         #region Insertion Sort
         var myInsertion = new Sorting.Insertion();
 
-        List<int> unsortedNumbers3 = [1, 44, 33, 7, 23, 55, 9, 5, -2, 10, 33, 77];
+        List<int> unsortedNumbers3 = [1, 44, 33, 7, 23, 55, 9, 5, 0, 10, 33, 77];
 
         myInsertion.Sort(unsortedNumbers3);
 
