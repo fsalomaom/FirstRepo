@@ -350,11 +350,23 @@ class Program
         #endregion
 
         #region Insertion Sort
+        /*
         var myInsertion = new Sorting.Insertion();
 
-        List<int> unsortedNumbers3 = [1, 44, 33, 7, 23, 55, 9, 5, 0, 10, 33, 77];
+        List<int> unsortedNumbers3 = [1, 44, 33, 7, 23, 18, 9, 5, 0, 10, 33, 77];
 
         myInsertion.Sort(unsortedNumbers3);
+        */
+        #endregion
+
+        #region Merge Sort
+        var myMerge = new Sorting.Merge();
+
+        List<int> unsortedNumbers4 = [1, 44, 33, 7, 23, 55, 9, 77, 5, -2, 10, 33];
+
+        myMerge.Sort(unsortedNumbers4, 0, unsortedNumbers4.Count - 1);
+
+        Console.WriteLine($"Merge Sorted: [{string.Join(" ", unsortedNumbers4)}]");
 
         #endregion
     }

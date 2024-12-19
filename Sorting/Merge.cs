@@ -5,24 +5,19 @@ namespace FirstRepo.Sorting;
 
 public class Merge
 {
-    public void Sort(List<int> items)
-    {
-
-    }
-
-    private void SortItems(List<int> items, int startIdx, int endIdx)
+    public void Sort(List<int> items, int startIdx, int endIdx)
     {
         if (startIdx >= endIdx)
             return;
 
-        Console.WriteLine($"Array to sort: [{string.Join(" ", items)}]");
+        Console.WriteLine($"Sorting items: StartIdx: {startIdx} - endIdx: {endIdx}] ->  [{string.Join(" ", items)}]");
 
         //Find the middle index
         int midIdx = startIdx + (endIdx - startIdx) / 2;
 
         //Recursively divide until the array length is 1
-        SortItems(items, startIdx, midIdx);
-        SortItems(items, midIdx + 1, endIdx);
+        Sort(items, startIdx, midIdx);
+        Sort(items, midIdx + 1, endIdx);
 
         //Merge the divided arrays
         MergeItems(items, startIdx, midIdx, endIdx);
@@ -30,9 +25,7 @@ public class Merge
 
     private void MergeItems(List<int> items, int startIdx, int midIdx, int endIdx)
     {
-        //Set the start index of the left side array and the start index of right side array
-        //int leftItemsCount = midIdx - startIdx + 1;
-        //int rightItemsCount = endIdx - midIdx;
+        Console.WriteLine($"Merging items: StartIdx: {startIdx} MidIdx: {midIdx} - endIdx: {endIdx}] [{string.Join(" ", items)}]");
 
         //Create two subarrays from the original
         List<int> leftItems = items.GetRange(startIdx, midIdx - startIdx + 1);
@@ -74,5 +67,7 @@ public class Merge
             rIdx++;
             kIdx++;
         }
+
+        Console.WriteLine($"Merged items: [{string.Join(" ", items)}]");
     }
 }
