@@ -360,6 +360,7 @@ class Program
         #endregion
 
         #region Merge Sort
+        /*
         var myMerge = new Sorting.Merge();
 
         List<int> unsortedNumbers4 = [44, 5, 13, 23, 7, 15, 9, 77, -2, 10, 33];
@@ -367,6 +368,17 @@ class Program
         myMerge.Sort(unsortedNumbers4, 0, unsortedNumbers4.Count - 1);
 
         Console.WriteLine($"Merge Sorted: [{string.Join(" ", unsortedNumbers4)}]");
+        */
+        #endregion
+
+        #region Quick Sort
+        var myQuick = new Sorting.Quick();
+
+        List<int> unsortedNumbers5 = [44, 5, 13, 23, 7, 15, 9, 77, -2, 10, 11];
+
+        myQuick.Sort(unsortedNumbers5, 0, unsortedNumbers5.Count - 1);
+
+        Console.WriteLine($"Quick Sorted: [{string.Join(" ", unsortedNumbers5)}]");
 
         #endregion
     }
