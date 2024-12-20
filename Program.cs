@@ -362,7 +362,7 @@ class Program
         #region Merge Sort
         var myMerge = new Sorting.Merge();
 
-        List<int> unsortedNumbers4 = [1, 44, 33, 7, 23, 55, 9, 77, 5, -2, 10, 33];
+        List<int> unsortedNumbers4 = [44, 5, 13, 23, 7, 15, 9, 77, -2, 10, 33];
 
         myMerge.Sort(unsortedNumbers4, 0, unsortedNumbers4.Count - 1);
 

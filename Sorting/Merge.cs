@@ -10,7 +10,7 @@ public class Merge
         if (startIdx >= endIdx)
             return;
 
-        Console.WriteLine($"Sorting items: StartIdx: {startIdx} - endIdx: {endIdx}] ->  [{string.Join(" ", items)}]");
+        Console.WriteLine($"Sorting: [{string.Join(" ", items.GetRange(startIdx, endIdx - startIdx + 1))}]");
 
         //Find the middle index
         int midIdx = startIdx + (endIdx - startIdx) / 2;
@@ -25,11 +25,11 @@ public class Merge
 
     private void MergeItems(List<int> items, int startIdx, int midIdx, int endIdx)
     {
-        Console.WriteLine($"Merging items: StartIdx: {startIdx} MidIdx: {midIdx} - endIdx: {endIdx}] [{string.Join(" ", items)}]");
-
         //Create two subarrays from the original
         List<int> leftItems = items.GetRange(startIdx, midIdx - startIdx + 1);
         List<int> rightItems = items.GetRange(midIdx + 1, endIdx - midIdx);
+
+        Console.WriteLine($"Merging: [{string.Join(" ", leftItems)}] [{string.Join(" ", rightItems)}]");
 
         //Set the index for leftItems array, rightItems and the original array
         int lIdx = 0;
@@ -68,6 +68,6 @@ public class Merge
             kIdx++;
         }
 
-        Console.WriteLine($"Merged items: [{string.Join(" ", items)}]");
+        Console.WriteLine($"Merged: [{string.Join(" ", items)}]");
     }
 }
