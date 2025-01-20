@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 
 namespace FirstRepo.DataStructures;
@@ -19,7 +21,7 @@ public class Node
 
 public class BinarySearchTree
 {
-    private Node? Root;
+    public Node? Root;
 
     public BinarySearchTree()
     {
@@ -166,6 +168,55 @@ public class BinarySearchTree
             Console.WriteLine($"Double Leaf node {value} removed");
         }
 
+    }
+
+    public List<int> BreadthFirstSearchInteractive()
+    {
+        if (Root == null)
+        {
+            Console.WriteLine($"Object has no items");
+            throw new ArgumentNullException("Object has no items", "Root");
+        }
+
+        var result = new List<int>();
+        var queue = new Queue<Node>();
+
+        queue.Enqueue(Root);
+
+        while (queue.Count > 0)
+        {
+            var currentNode = queue.Dequeue();
+            Console.WriteLine($"Node {currentNode.Value} | Left: {currentNode.Left?.Value} | Right: {currentNode.Right?.Value}");
+
+            result.Add(currentNode.Value);
+
+            if (currentNode.Left != null)
+                queue.Enqueue(currentNode.Left);
+
+            if (currentNode.Right != null)
+                queue.Enqueue(currentNode.Right);
+        }
+
+        return result;
+    }
+
+    public List<int> BreadthFirstSearchRecursive(Queue<Node> queue, List<int> result)
+    {
+        if (queue.Count == 0)
+            return result;
+
+        var currentNode = queue.Dequeue();
+        Console.WriteLine($"Node {currentNode.Value} | Left: {currentNode.Left?.Value} | Right: {currentNode.Right?.Value}");   
+
+        result.Add(currentNode.Value);
+
+        if (currentNode.Left != null)
+            queue.Enqueue(currentNode.Left);
+
+        if (currentNode.Right != null)
+            queue.Enqueue(currentNode.Right);
+
+        BreadthFirstSearchRecursive(queue, result);
     }
 
     private Node? FindNode(int value, out Node? parentNode)

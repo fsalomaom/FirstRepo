@@ -244,7 +244,7 @@ class Program
         #endregion
 
         #region Binary Search Tree
-        /*
+        
         var myBst = new DataStructures.BinarySearchTree();
 
         myBst.Insert(9);
@@ -266,7 +266,12 @@ class Program
 
         myBst.Remove(9);
         myBst.PrintTree();
-        */
+        
+        //var bfsResult = myBst.BreadthFirstSearchInteractive();
+        var bfsResult = myBst.BreadthFirstSearchRecursive(new Queue<DataStructures.Node>().Enqueue(myBst.Root), new List<int>());
+
+        Console.WriteLine($"BFS result: [{string.Join(" ", bfsResult)}]");
+
         #endregion
 
         #region Graphs
@@ -372,6 +377,7 @@ class Program
         #endregion
 
         #region Quick Sort
+        /*
         var myQuick = new Sorting.Quick();
 
         List<int> unsortedNumbers5 = [44, 5, 13, 23, 7, 15, 9, 77, -2, 10, 11];
@@ -379,7 +385,7 @@ class Program
         myQuick.Sort(unsortedNumbers5, 0, unsortedNumbers5.Count - 1);
 
         Console.WriteLine($"Quick Sorted: [{string.Join(" ", unsortedNumbers5)}]");
-
+        */
         #endregion
     }
 }
