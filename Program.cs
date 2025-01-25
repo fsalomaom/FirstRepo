@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FirstRepo.DataStructures;
 using FirstRepo.DataStructures.Arrays;
 using FirstRepo.DataStructures.LinkedLists;
 using FirstRepo.InterviewLessons;
@@ -244,7 +245,7 @@ class Program
         #endregion
 
         #region Binary Search Tree
-        
+
         var myBst = new DataStructures.BinarySearchTree();
 
         myBst.Insert(9);
@@ -266,9 +267,13 @@ class Program
 
         myBst.Remove(9);
         myBst.PrintTree();
-        
+
         //var bfsResult = myBst.BreadthFirstSearchInteractive();
-        var bfsResult = myBst.BreadthFirstSearchRecursive(new Queue<DataStructures.Node>().Enqueue(myBst.Root), new List<int>());
+        
+        var bfsQueue = new Queue<Node>();
+        bfsQueue.Enqueue(myBst.Root);
+
+        var bfsResult = myBst.BreadthFirstSearchRecursive(bfsQueue, new List<int>());
 
         Console.WriteLine($"BFS result: [{string.Join(" ", bfsResult)}]");
 

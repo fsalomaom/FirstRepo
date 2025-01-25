@@ -216,7 +216,7 @@ public class BinarySearchTree
         if (currentNode.Right != null)
             queue.Enqueue(currentNode.Right);
 
-        BreadthFirstSearchRecursive(queue, result);
+        return BreadthFirstSearchRecursive(queue, result);
     }
 
     private Node? FindNode(int value, out Node? parentNode)
