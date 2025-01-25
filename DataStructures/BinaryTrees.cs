@@ -206,7 +206,7 @@ public class BinarySearchTree
             return result;
 
         var currentNode = queue.Dequeue();
-        Console.WriteLine($"Node {currentNode.Value} | Left: {currentNode.Left?.Value} | Right: {currentNode.Right?.Value}");   
+        Console.WriteLine($"Node {currentNode.Value} | Left: {currentNode.Left?.Value} | Right: {currentNode.Right?.Value}");
 
         result.Add(currentNode.Value);
 
@@ -217,6 +217,75 @@ public class BinarySearchTree
             queue.Enqueue(currentNode.Right);
 
         return BreadthFirstSearchRecursive(queue, result);
+    }
+
+    public List<int> DepthFirstSearchInOrder()
+    {
+        if (Root == null)
+            return new List<int>();
+
+        return TraverseInOrder(Root, new List<int>());
+    }
+
+    public List<int> DepthFirstSearchPreOrder()
+    {
+        if (Root == null)
+            return new List<int>();
+
+        return TraversePreOrder(Root, new List<int>());
+    }
+
+    public List<int> DepthFirstSearchPostOrder()
+    {
+        if (Root == null)
+            return new List<int>();
+
+        return TraversePostOrder(Root, new List<int>());
+    }
+
+    private List<int> TraverseInOrder(Node node, List<int> result)
+    {
+        Console.WriteLine($"InOrder current Node: {node.Value}");
+
+        if (node.Left != null)
+            TraverseInOrder(node.Left, result);
+
+        result.Add(node.Value);
+
+        if (node.Right != null)
+            TraverseInOrder(node.Right, result);
+
+        return result;
+    }
+
+    private List<int> TraversePreOrder(Node node, List<int> result)
+    {
+        Console.WriteLine($"TraversePreOrder current Node: {node.Value}");
+
+        result.Add(node.Value);
+
+        if (node.Left != null)
+            TraversePreOrder(node.Left, result);
+
+        if (node.Right != null)
+            TraversePreOrder(node.Right, result);
+
+        return result;
+    }
+
+    private List<int> TraversePostOrder(Node node, List<int> result)
+    {
+        Console.WriteLine($"TraversePostOrder current Node: {node.Value}");
+
+        if (node.Left != null)
+            TraversePostOrder(node.Left, result);
+
+        if (node.Right != null)
+            TraversePostOrder(node.Right, result);
+
+        result.Add(node.Value);
+
+        return result;
     }
 
     private Node? FindNode(int value, out Node? parentNode)

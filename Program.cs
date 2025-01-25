@@ -255,27 +255,37 @@ class Program
         myBst.Insert(170);
         myBst.Insert(15);
         myBst.Insert(1);
-        myBst.Insert(17);
         myBst.PrintTree();
 
-        myBst.LookUp(15);
-        myBst.LookUp(20);
-        myBst.LookUp(90);
+        //myBst.LookUp(15);
+        //myBst.LookUp(20);
+        //myBst.LookUp(90);
 
-        myBst.Remove(20);
-        myBst.PrintTree();
+        //myBst.Remove(20);
+        //myBst.PrintTree();
 
-        myBst.Remove(9);
-        myBst.PrintTree();
+        //myBst.Remove(9);
+        //myBst.PrintTree();
 
-        //var bfsResult = myBst.BreadthFirstSearchInteractive();
-        
-        var bfsQueue = new Queue<Node>();
-        bfsQueue.Enqueue(myBst.Root);
+        var bfsResult = myBst.BreadthFirstSearchInteractive();
 
-        var bfsResult = myBst.BreadthFirstSearchRecursive(bfsQueue, new List<int>());
+        //var bfsQueue = new Queue<Node>();
+        //bfsQueue.Enqueue(myBst.Root);
+        //var bfsResult = myBst.BreadthFirstSearchRecursive(bfsQueue, new List<int>());
 
         Console.WriteLine($"BFS result: [{string.Join(" ", bfsResult)}]");
+
+        var dfsResult = myBst.DepthFirstSearchInOrder();
+
+        Console.WriteLine($"DFS InOrder Result: [{string.Join(" ", dfsResult)}]");
+
+        dfsResult = myBst.DepthFirstSearchPreOrder();
+
+        Console.WriteLine($"DFS PreOrder Result: [{string.Join(" ", dfsResult)}]");
+
+        dfsResult = myBst.DepthFirstSearchPostOrder();
+
+        Console.WriteLine($"DFS PostOrder Result: [{string.Join(" ", dfsResult)}]");
 
         #endregion
 
