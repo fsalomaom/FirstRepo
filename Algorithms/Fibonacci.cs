@@ -52,7 +52,7 @@ public class Fibonacci
 
     public long FibonacciMemoized(int number)
     {
-        Func<int, long> fibFunc = null;
+        Func<int, long> fibFunc = default;
 
         fibFunc = num => num > 1 ? fibFunc(num - 1) + fibFunc(num - 2) : num;
 
