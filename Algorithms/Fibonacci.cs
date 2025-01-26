@@ -1,18 +1,13 @@
 using System;
 using System.Data;
+using System.Collections.Generic;
 
 namespace FirstRepo.Algorithms;
 
 public class Fibonacci
 {
-    public long FibonacciRecursively(int number)
-    {
-        if (number < 2)
-            return number;
-
-        return FibonacciRecursively(number - 2) + FibonacciRecursively(number - 1);
-    }
-
+    private int Count = 0;
+    
     public long FibonacciIteratively(int number)
     {
         if (number == 0)
@@ -41,5 +36,28 @@ public class Fibonacci
         }
 
         return result;
+    }
+
+    public long FibonacciRecursively(int number)
+    {
+        Count++;
+
+        Console.WriteLine($"{Count} -> FiboRecursively({number})");
+
+        if (number < 2)
+            return number;
+
+        return FibonacciRecursively(number - 2) + FibonacciRecursively(number - 1);
+    }
+
+    public long FibonacciMemoized(int number)
+    {
+        Func<int, long> fibFunc = null;
+
+        fibFunc = num => num > 1 ? fibFunc(num - 1) + fibFunc(num - 2) : num;
+
+        fibFunc = fibFunc.Memoize();
+
+        return fibFunc(number);
     }
 }

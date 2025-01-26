@@ -245,7 +245,7 @@ class Program
         #endregion
 
         #region Binary Search Tree
-
+        /*
         var myBst = new DataStructures.BinarySearchTree();
 
         myBst.Insert(9);
@@ -286,7 +286,7 @@ class Program
         dfsResult = myBst.DepthFirstSearchPostOrder();
 
         Console.WriteLine($"DFS PostOrder Result: [{string.Join(" ", dfsResult)}]");
-
+        */
         #endregion
 
         #region Graphs
@@ -328,14 +328,17 @@ class Program
         #endregion
 
         #region Fibonacci
-        /*
         var myFibo = new Algorithms.Fibonacci();
 
-        int fiboNumber = 13;
+        int fiboNumber = 5;
 
-        Console.WriteLine($"FibonacciInteractive({fiboNumber}) = {myFibo.FibonacciIteratively(fiboNumber)}");
+        //Console.WriteLine($"FibonacciInteractive({fiboNumber}) = {myFibo.FibonacciIteratively(fiboNumber)}");
         Console.WriteLine($"FibonacciRecursive({fiboNumber}) = {myFibo.FibonacciRecursively(fiboNumber)}");
-        */
+        
+        Console.WriteLine("---------------------------");
+
+        Console.WriteLine($"FibonacciMemoization({fiboNumber}) = {myFibo.FibonacciMemoized(fiboNumber)}");
+
         #endregion
 
         #region Reverse String
